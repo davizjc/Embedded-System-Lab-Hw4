@@ -1,9 +1,3 @@
-# led_test_client.py
-# Test client for erpc led server example
-# Author: becksteing
-# Date: 5/13/2019
-# Blinks LEDs on a connected Mbed-enabled board running the erpc LED server example
-
 from time import sleep
 import erpc
 from blink_led import *
