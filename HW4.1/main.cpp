@@ -65,8 +65,7 @@ int main(void) {
 	rpc_server.setCodecFactory(&basic_cf);
 	rpc_server.setMessageBufferFactory(&dynamic_mbf);
 
-	// Add the led service to the server
-    printf("Adding LED server.\n");
+    printf("Adding server.\n");
 	rpc_server.addService(&led_service);
 
 	// Run the server. This should never exit
@@ -77,12 +76,10 @@ int main(void) {
 
 
 
-//python3 -m serial.tools.list_ports -v      to check port 
-//python3 XBee_host.py /dev/cu.usbserial-AC00CJUO
-
-//   cd ~/"Mbed Programs"/HW4.1/
+// python3 -m serial.tools.list_ports -v      to check port 
+// cd ~/"Mbed Programs"/HW4.1/
 
 // /dev/cu.usbserial-AC00CJUO
-// python3 client.py /dev/cu.usbserial-AC00CJUO
+// python3 led_test_client.py /dev/cu.usbserial-AC00CJUO
 
 
