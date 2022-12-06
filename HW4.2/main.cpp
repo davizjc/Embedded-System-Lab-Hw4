@@ -59,7 +59,6 @@ void record(void) {
 void startRecord(void) {
   idR[indexR++] = queue.call_every(100ms, record);
   indexR = indexR % 32;
-  //queue.call(mqtt_queue.event(&publish_message, &client));;
 }
 
 void stopRecord(void) {
@@ -68,7 +67,7 @@ void stopRecord(void) {
 }
 
 void publish_message(MQTT::Client<MQTTNetwork, Countdown>* client) {
-    double r = 0.0;
+    double r = 0.0;   // not important since doesn't print any way but baisclly set if degree less than 10 r , p , y = 0.0
     double p = 0.0;
     double y = 0.0;
 
@@ -200,13 +199,7 @@ int main() {
     return 0;
 }
 
-//     /usr/local/opt/mosquitto/bin/mosquitto_sub -h 192.168.0.13 -t test
-//     /usr/local/opt/mosquitto/bin/mosquitto_pub -h 192.168.0.13 -t test -m "Hello” 
-//     /usr/local/sbin/mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
-//     /usr/local/opt/mosquitto/sbin/mosquitto -c /Users/birdhsieh/Mbed Programs/mosquitto.conf
-//     /usr/local/sbin/mosquitto -c /Users/birdhsieh/Mbed Programs/mosquitto.conf
+
 //     python3 mqtt_client.py
 
 
-//   /usr/local/opt/mosquitto/bin/mosquitto_sub -h 172.20.10.2 -t test
-//   /usr/local/opt/mosquitto/bin/mosquitto_pub -h 172.20.10.2 -t test -m "Hello”
