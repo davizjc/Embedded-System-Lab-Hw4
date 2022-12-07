@@ -8,8 +8,9 @@ program HW; // specify name of output files
 
 interface LEDBlinkService // cover functions for same topic
 {
-    printtext(in uint8 led) -> void
-    location(in uint8 led) -> void
+    printtext(in uint8 c) -> void
+    location(in uint8 col, in uint8 row) -> void
+    
 }
 
 
