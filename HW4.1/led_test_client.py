@@ -17,19 +17,26 @@ if __name__ == "__main__":
 
     # Blink LEDs on the connected erpc server
     
-
- 
-
-    client.location(1)
+    client.location(3,1)
     print("LCD locate") 
 
-    client.printtext(1)
-    print("LCD print") 
+    for i in range(0,9):
+            client.printtext(i)
+            print("LCD print",i) 
 
+        
+            
+        
   
 
     
  
+
+
+  
+
+
+
 
 
   
