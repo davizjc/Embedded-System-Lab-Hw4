@@ -23,18 +23,26 @@ TextLCD_I2C lcd(&i2c_lcd, 0x4E, TextLCD::LCD16x2);
 #include "HW_server.h"
 
 
-void location(uint8_t led) {
-    lcd.locate(1,1);
-    printf("LCD locate\n");
+void location(uint8_t col,uint8_t row) {
+    lcd.locate(col,row); 
+    printf("LCD locate %d , %d\n",col,row);
 }
 
-void printtext(uint8_t led) {
-    lcd.putc(0x48);           // ‘H’
-    lcd.putc(0x45);           // ‘E’
-    lcd.putc(0x4C);           // ‘L’
-    lcd.putc(0x4C);           // ‘L’     
-    lcd.putc(0x4F);           // ‘O’  
-    printf("LCD print\n");
+ int intToAscii(int number) {
+   return '0' + number;
+}
+
+void printtext(uint8_t c) {
+    // lcd.putc(0x48);           // ‘H’
+    // lcd.putc(0x45);           // ‘E’
+    // lcd.putc(0x4C);           // ‘L’
+    // lcd.putc(0x4C);           // ‘L’     
+    // lcd.putc(0x4F);           // ‘O’  
+    
+    lcd.putc(intToAscii(c));      // display numbers 0-9
+      
+  
+    printf("LCD print %d\n", c );
 }
 
 /** erpc infrastructure */
