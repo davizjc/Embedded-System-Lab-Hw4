@@ -1,13 +1,13 @@
 from time import sleep
 import erpc
-from blink_led import *
+from HW import *
 import sys
 
 
 if __name__ == "__main__":
 
     if len(sys.argv) != 2:
-        print("Usage: python led_test_client.py <serial port to use>")
+        print("Usage: python client.py <serial port to use>")
         exit()
 
     # Initialize all erpc infrastructure
@@ -17,8 +17,20 @@ if __name__ == "__main__":
 
     # Blink LEDs on the connected erpc server
     
-    client.led_on(2)
-    client.led_off(2)
+
+ 
+
+    client.location(1)
+    print("LCD locate") 
+
+    client.printtext(1)
+    print("LCD print") 
+
+  
+
+    
+ 
+
 
   
 
